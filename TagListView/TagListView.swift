@@ -423,4 +423,11 @@ open class TagListView: UIView {
             delegate?.tagRemoveButtonPressed?(tagView.currentTitle ?? "", tagView: tagView, sender: self)
         }
     }
+
+    open func numberOfVisibleTags(atRow value : Int) -> Int {
+        if value < self.rows {
+            return self.rowViews[value].subViews.count
+        }
+        return 0
+    }
 }
