@@ -426,7 +426,7 @@ open class TagListView: UIView {
 
     open func numberOfVisibleTags(atRow value : Int) -> Int {
         if value < self.rows {
-            return self.rowViews[value].subViews.count
+            return self.rowViews[value].subviews.count
         }
         return 0
     }
