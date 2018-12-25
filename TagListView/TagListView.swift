@@ -64,25 +64,25 @@ open class TagListView: UIView {
         }
     }
     
-    @IBInspectable open dynamic var cornerRadius: CGFloat = 0 {
+    @IBInspectable open dynamic var tagListCornerRadius: CGFloat = 0 {
         didSet {
             for tagView in tagViews {
-                tagView.cornerRadius = cornerRadius
+                tagView.cornerRadius = tagListCornerRadius
             }
         }
     }
-    @IBInspectable open dynamic var borderWidth: CGFloat = 0 {
+    @IBInspectable open dynamic var tagListBorderWidth: CGFloat = 0 {
         didSet {
             for tagView in tagViews {
-                tagView.borderWidth = borderWidth
+                tagView.tagBorderWidth = tagListBorderWidth
             }
         }
     }
     
-    @IBInspectable open dynamic var borderColor: UIColor? {
+    @IBInspectable open dynamic var tagListBorderColor: UIColor? {
         didSet {
             for tagView in tagViews {
-                tagView.borderColor = borderColor
+                tagView.tagBorderColor = tagListBorderColor
             }
         }
     }
@@ -257,7 +257,7 @@ open class TagListView: UIView {
             tagBackgroundView.frame.origin = CGPoint(x: currentRowWidth, y: 0)
             tagBackgroundView.frame.size = tagView.bounds.size
             tagBackgroundView.layer.shadowColor = shadowColor.cgColor
-            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: cornerRadius).cgPath
+            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: tagListCornerRadius).cgPath
             tagBackgroundView.layer.shadowOffset = shadowOffset
             tagBackgroundView.layer.shadowOpacity = shadowOpacity
             tagBackgroundView.layer.shadowRadius = shadowRadius
@@ -302,9 +302,9 @@ open class TagListView: UIView {
         tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
         tagView.selectedBackgroundColor = tagSelectedBackgroundColor
         tagView.titleLineBreakMode = tagLineBreakMode
-        tagView.cornerRadius = cornerRadius
-        tagView.borderWidth = borderWidth
-        tagView.borderColor = borderColor
+        tagView.cornerRadius = tagListCornerRadius
+        tagView.tagBorderWidth = tagListBorderWidth
+        tagView.tagBorderColor = tagListBorderColor
         tagView.selectedBorderColor = selectedBorderColor
         tagView.paddingX = paddingX
         tagView.paddingY = paddingY
